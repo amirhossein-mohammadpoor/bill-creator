@@ -23,10 +23,10 @@
         <div class="description">
           <p class="food-name">
             قیمه مکزیکی با سس آلفردو <br>
-            <span class="food-price">۳۷٫۰۰۰</span><span class="unit">تومان</span>
+            <span class="food-price">37,000</span><span class="unit">تومان</span>
           </p>
           <div class="number">
-            <span >0</span>
+            <span>0</span>
             <div class="buttons">
               <img src="./group.svg" onclick="increment(this)">
               <img src="./line-2.svg" onclick="decrement(this)">
@@ -34,8 +34,8 @@
           </div>
         </div>
       </div>
-      <p class="total-price">
-        <span >0</span><span class="unit">تومان</span>
+      <p class="item-total-price">
+        <span>0</span><span class="unit">تومان</span>
       </p>
     </div>
     <div class="item">
@@ -44,10 +44,10 @@
         <div class="description">
           <p class="food-name">
             قیمه مکزیکی با سس آلفردو <br>
-            <span class="food-price">۳۷٫۰۰۰</span><span class="unit">تومان</span>
+            <span class="food-price">37,000</span><span class="unit">تومان</span>
           </p>
           <div class="number">
-            <span >0</span>
+            <span>0</span>
             <div class="buttons">
               <img src="./group.svg" onclick="increment(this)">
               <img src="./line-2.svg" onclick="decrement(this)">
@@ -55,8 +55,8 @@
           </div>
         </div>
       </div>
-      <p class="total-price">
-        <span >0</span><span class="unit">تومان</span>
+      <p class="item-total-price">
+        <span>0</span><span class="unit">تومان</span>
       </p>
     </div>
     <div class="item">
@@ -65,10 +65,11 @@
         <div class="description">
           <p class="food-name">
             قیمه مکزیکی با سس آلفردو <br>
-            <span class="food-price">۳۷٫۰۰۰</span><span class="unit">تومان</span>
+            <span class="food-price">37,000</span>
+            <span class="unit">تومان</span>
           </p>
           <div class="number">
-            <span >0</span>
+            <span>0</span>
             <div class="buttons">
               <img src="./group.svg" onclick="increment(this)">
               <img src="./line-2.svg" onclick="decrement(this)">
@@ -76,8 +77,8 @@
           </div>
         </div>
       </div>
-      <p class="total-price">
-        <span >0</span><span class="unit">تومان</span>
+      <p class="item-total-price">
+        <span>0</span><span class="unit">تومان</span>
       </p>
     </div>
     <div class="item">
@@ -86,10 +87,10 @@
         <div class="description">
           <p class="food-name">
             قیمه مکزیکی با سس آلفردو <br>
-            <span class="food-price">۳۷٫۰۰۰</span><span class="unit">تومان</span>
+            <span class="food-price">37,000</span><span class="unit">تومان</span>
           </p>
           <div class="number">
-            <span >0</span>
+            <span>0</span>
             <div class="buttons">
               <img src="./group.svg" onclick="increment(this)">
               <img src="./line-2.svg" onclick="decrement(this)">
@@ -97,8 +98,8 @@
           </div>
         </div>
       </div>
-      <p class="total-price">
-        <span >0</span><span class="unit">تومان</span>
+      <p class="item-total-price">
+        <span>0</span><span class="unit">تومان</span>
       </p>
     </div>
     <div class="item">
@@ -107,10 +108,10 @@
         <div class="description">
           <p class="food-name">
             قیمه مکزیکی با سس آلفردو <br>
-            <span class="food-price">۳۷٫۰۰۰</span><span class="unit">تومان</span>
+            <span class="food-price">37,000</span><span class="unit">تومان</span>
           </p>
           <div class="number">
-            <span >0</span>
+            <span>0</span>
             <div class="buttons">
               <img src="./group.svg" onclick="increment(this)">
               <img src="./line-2.svg" onclick="decrement(this)">
@@ -118,33 +119,36 @@
           </div>
         </div>
       </div>
-      <p class="total-price">
-        <span >0</span><span class="unit">تومان</span>
+      <p class="item-total-price">
+        <span>0</span><span class="unit">تومان</span>
       </p>
     </div>
   </main>
   <footer>
-    <div class="order-desription">
+    <div class="bill">
       <table>
         <tr>
           <td>جمع کل سفارشات</td>
-          <td id="total-order">0 <span class="unit">تومان</span></td>
+          <td id="total-order"><span>0</span> <span class="unit">تومان</span></td>
         </tr>
         <tr>
           <td>حق سرویس و کارمزد </td>
-          <td id="service">0 <span class="unit">تومان</span></td>
+          <td id="service"><span>0</span> <span class="unit">تومان</span></td>
         </tr>
         <tr>
           <td>تخفیف</td>
-          <td id="discount">0 <span class="unit">تومان</span></td>
+          <td id="discount"><span>0</span> <span class="unit">تومان</span></td>
         </tr>
       </table>
-      <p id="total-price">0 <span class="unit">تومان</span></p>
+      <p id="total-price"><span>0</span><span class="unit">تومان</span></p>
     </div>
     <div class="submit-order">
       <div class="discount-code">
         <input type="text" placeholder="کد تخفیف">
-        <button>+</button>
+        <button onclick="checkDiscountCode()">+</button>
+        <button onclick="deleteDiscountCode()" class="delete-discount-button">
+          <i class="fa fa-trash"></i>
+        </button>
       </div>
       <button id="submit">ثبت سفارش</button>
     </div>

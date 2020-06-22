@@ -5,7 +5,7 @@
 }
 
 body {
-  margin: 0;
+  margin: 40px 20px;
   border-radius: 36.3px;
   direction: rtl;
   border: solid 7px rgba(241, 196, 15, 0.5);
@@ -126,13 +126,13 @@ main .item .content .description .number .buttons img:nth-child(1) {
   margin-bottom: 4px;
 }
 
-main .item  .total-price {
+main .item  .item-total-price {
   display: flex;
   align-items: flex-end;
   font-size: 28.1px;
 }
 
-main .item  .total-price .unit {
+main .item  .item-total-price .unit {
   font-size: 15px;
   font-weight: bold;
   margin: 0px 5px 10px 0px;
@@ -143,33 +143,33 @@ footer {
   padding: 20px 18px;
 }
 
-footer .order-desription {
+footer .bill {
   width: 50%;
 }
 
-footer .order-desription table {
+footer .bill table {
   width: 100%;
   font-size: 16.4px;
   font-weight: bold;
 }
 
-footer .order-desription table #total-order, #service, #discount {
-  text-align: center;
+footer .bill table #total-order, #service, #discount {
+  text-align: end;
   font-size: 21.1px;
 }
 
-footer .order-desription table .unit {
+footer .bill table .unit {
   font-size: 15.2px;
 }
 
-footer .order-desription #total-price {
+footer .bill #total-price {
   font-size: 45.6px;
   font-weight: bold;
   text-align: center;
   line-height: 56px;
 }
 
-footer .order-desription #total-price .unit {
+footer .bill #total-price .unit {
   font-size: 29.3px;
   margin-bottom: 0px;
 }
@@ -177,6 +177,7 @@ footer .order-desription #total-price .unit {
 footer .submit-order {
   width: 50%;
   padding-top: 45px;
+  padding-right: 20px;
 }
 
 footer .submit-order .discount-code {
@@ -192,6 +193,17 @@ footer .submit-order .discount-code input {
   padding: 5px 17px;
   font-size: 21.1px;
   color: rgba(230, 126, 34, 0.71);
+  transition: 0.2s;
+}
+
+footer .submit-order .discount-code .correct {
+  background-color: rgba(46, 204, 113, 0.18);
+  border: solid 1.2px #e74c3c;    
+}
+
+footer .submit-order .discount-code .wrong {
+  border: solid 1.2px #e74c3c;
+  background-color: rgba(231, 76, 60, 0.18);
 }
 
 footer .submit-order .discount-code input::placeholder {
@@ -208,6 +220,14 @@ footer .submit-order .discount-code button {
   border-radius: 50%;
   color: white;
   font-size: 27px;
+}
+
+footer .submit-order .discount-code .delete-discount-button {
+  display: none;
+  background-color: #e74c3c;
+  color: white;
+  font-size: 16px;
+  line-height: 0px;
 }
 
 footer .submit-order #submit {
