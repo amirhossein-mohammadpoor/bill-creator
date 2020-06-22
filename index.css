@@ -6,10 +6,9 @@
 
 body {
   margin: 0;
-  width: 100vw;
-  height: 100vh;
   font-family: "Yekan Bakh";
   border-radius: 36.3px;
+  direction: rtl;
   border: solid 7px rgba(241, 196, 15, 0.5);
 }
 
@@ -17,7 +16,104 @@ body {
   box-sizing: border-box;
 }
 
+p {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
 header h3{
   font-size: 22.2px;
   text-align: center;
+  margin: 19px 0px;
+}
+
+main {
+  padding:0px 46px ;
+}
+
+main .item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: solid 1.2px #c6c6c6;
+  padding: 6px 0px;
+}
+
+main .item .content {
+  display: flex;
+}
+
+main .item .content img{
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+main .item .content .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main .item .content .description .food-name {
+  font-size: 17.4px;
+  font-weight: bold;
+}
+
+main .item .content .description .food-name .food-price {
+  font-size: 19.3px;
+}
+
+main .item .content .description .food-name .unit {
+  font-size: 14px;
+  margin-right: 4px;
+}
+
+main .item .content .description .number {
+  display: flex;
+  align-items: flex-end;
+  font-size: 28.1px;
+}
+
+main .item .content .description .number span {
+  line-height: 30px;
+}
+
+main .item .content .description .number .buttons {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 5px 3px 0px;
+}
+
+main .item .content .description .number .buttons img {
+  color: red;
+  margin: 0;
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+}
+
+main .item .content .description .number .buttons img:nth-child(1) {
+  margin-bottom: 4px;
+}
+
+main .item  .total-price {
+  display: flex;
+  align-items: flex-end;
+  font-size: 28.1px;
+}
+
+main .item  .total-price .unit {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0px 5px 10px 0px;
 }
