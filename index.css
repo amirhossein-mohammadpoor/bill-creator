@@ -1,5 +1,23 @@
+@font-face {
+  font-family: "Yekan Bakh";
+  src: url("./Yekan Bakh Medium.woff") format("woff");
+  font-weight: normal;
+}
+
 body {
   margin: 0;
   width: 100vw;
   height: 100vh;
+  font-family: "Yekan Bakh";
+  border-radius: 36.3px;
+  border: solid 7px rgba(241, 196, 15, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header h3{
+  font-size: 22.2px;
+  text-align: center;
 }
