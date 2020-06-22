@@ -1,5 +1,15 @@
 const discountCodes = ["8as8d7a", "56gh4j6", "o2p13i1", "zxc54q5"]
 
+prettifyNumber = number => {
+  number += ""
+  const arr = []
+  while (number) {
+    arr.unshift(number.slice(-3))
+    number = number.replace(number.slice(-3), "")
+  }
+  return arr.join(",")
+}
+
 increment = elemObj => {
   const currentItem = $(elemObj).closest(".item")
   const itemPrice = currentItem.find(".food-price").text().replace(",", "")
@@ -12,7 +22,7 @@ increment = elemObj => {
   currentItem.find(".item-total-price")
     .find("span")
     .eq(0)
-    .text(`${itemPrice * numberItem}`)
+    .text(`${prettifyNumber(itemPrice * numberItem)}`)
 }
 
 decrement = elemObj => {
@@ -29,7 +39,7 @@ decrement = elemObj => {
   currentItem.find(".item-total-price")
     .find("span")
     .eq(0)
-    .text(`${itemPrice * numberItem}`)
+    .text(`${prettifyNumber(itemPrice * numberItem)}`)
 }
 
 let discountFlag = false
@@ -60,28 +70,28 @@ deleteDiscountCode = () => {
     .find("input")
     .val("")
     .removeClass()
-    discountFlag = false
+  discountFlag = false
 }
 
 $("#submit").on("click", function () {
   let sum = 0
   $(".item-total-price").each(function () {
-    sum = sum + +$(this).find("span").eq(0).text()
+    sum = sum + +$(this).find("span").eq(0).text().replace(/,/g, "")
   })
   $("#total-order")
     .find("span")
     .eq(0)
-    .text(`${sum}`)
+    .text(`${prettifyNumber(sum)}`)
   $("#service")
     .find("span")
     .eq(0)
-    .text(`${(sum * 0.025) | 0}`)
+    .text(`${prettifyNumber((sum * 0.025) | 0)}`)
   sum = sum + (sum * 0.025) | 0
   if (discountFlag) {
     $("#discount")
       .find("span")
       .eq(0)
-      .text(`${(sum * 0.1) | 0}`)
+      .text(`${prettifyNumber((sum * 0.1) | 0)}`)
     sum = sum - (sum * 0.1) | 0
   } else {
     $("#discount")
@@ -92,5 +102,5 @@ $("#submit").on("click", function () {
   $("#total-price")
     .find("span")
     .eq(0)
-    .text(`${sum}`)
+    .text(`${prettifyNumber(sum)}`)
 })
